@@ -4,7 +4,7 @@ import java.sql.SQLException;
  * Java core pro. Home work 6
  * @author Andrey ievlev
  * @version 11 March, 2018
- * @link
+ * @link https://github.com/OLskrain/HMlesson6m.git
  */
 public class Main {
     public static int [] mass;
