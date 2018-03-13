@@ -48,7 +48,6 @@ public void addBDTest(){
     try {
         task3.transactionsAddStudents(testSurname,testScore);
         Assert.assertEquals(expectation, task3.getData(testSurname));
-        task3.backToSave();
     } catch (SQLException e) {
         e.printStackTrace();
     }
@@ -66,13 +65,17 @@ public void updateTest(){
     try {
         task3.transactionsUpdateData(testSurname,testScore);
         Assert.assertEquals(expectation, task3.getData(testSurname));
-        task3.backToSave();
     } catch (SQLException e) {
         e.printStackTrace();
     }
 }
 @After
     public void end(){
-    task3.disconnect();
+    try {
+        task3.backToSave();
+        task3.disconnect();
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
 }
 }
